@@ -11,13 +11,13 @@ const Checkbox = React.forwardRef<
   <CheckboxPrimitive.Root
     ref={ref}
     className={cn(
-      "peer h-5 w-5 shrink-0 rounded-md border-2 border-primary/50 ring-offset-background transition-all duration-300 hover:border-primary hover:scale-110 hover:shadow-[0_0_12px_hsl(var(--primary)/0.4)] data-[state=checked]:bg-gradient-to-br data-[state=checked]:from-primary data-[state=checked]:to-accent data-[state=checked]:border-accent data-[state=checked]:shadow-[0_0_16px_hsl(var(--accent)/0.6)] data-[state=checked]:text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+      "peer h-6 w-6 shrink-0 rounded-lg border-2 border-primary/30 bg-background ring-offset-background transition-all duration-300 ease-out hover:border-primary hover:rotate-6 hover:shadow-[0_0_20px_hsl(var(--primary)/0.5)] data-[state=checked]:bg-gradient-to-br data-[state=checked]:from-primary data-[state=checked]:via-accent data-[state=checked]:to-primary data-[state=checked]:border-transparent data-[state=checked]:shadow-[0_0_25px_hsl(var(--accent)/0.8),inset_0_1px_3px_rgba(255,255,255,0.2)] data-[state=checked]:rotate-0 data-[state=checked]:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
       className,
     )}
     {...props}
   >
-    <CheckboxPrimitive.Indicator className={cn("flex items-center justify-center text-current animate-scale-in")}>
-      <Check className="h-4 w-4 stroke-[3px]" />
+    <CheckboxPrimitive.Indicator className={cn("flex items-center justify-center text-white animate-scale-in")}>
+      <Check className="h-4 w-4 stroke-[3.5px] drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]" />
     </CheckboxPrimitive.Indicator>
   </CheckboxPrimitive.Root>
 ));
