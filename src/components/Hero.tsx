@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, CheckCircle2, Clock, Shield, Zap } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export const Hero = () => {
+  const navigate = useNavigate();
+  
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
@@ -85,7 +88,7 @@ export const Hero = () => {
               <Button
                 size="lg"
                 className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 min-h-[48px] shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-                onClick={() => scrollToSection("services")}
+                onClick={() => navigate("/order-form")}
               >
                 ORDER NOW – $30 Flat Rate
               </Button>

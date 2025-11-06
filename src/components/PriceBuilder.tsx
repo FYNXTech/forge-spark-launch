@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "sonner";
 import { Info } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 type PageTier = "starter" | "standard" | "professional" | "custom";
 
@@ -27,6 +28,7 @@ const addOns: AddOn[] = [
 export const PriceBuilder = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+  const navigate = useNavigate();
   const [selectedTier, setSelectedTier] = useState<PageTier | null>(null);
   const [selectedAddOns, setSelectedAddOns] = useState<Set<string>>(new Set());
   const [displayTotal, setDisplayTotal] = useState(0);
@@ -92,15 +94,7 @@ export const PriceBuilder = () => {
       return;
     }
 
-    const params = new URLSearchParams({
-      pages: pageTiers.find((t) => t.id === selectedTier)?.pages || "",
-      scikit: selectedAddOns.has("scikit") ? "true" : "false",
-      addons: Array.from(selectedAddOns).join(","),
-      total: actualTotal.toString(),
-    });
-
-    window.open(`https://instagram.com/founded.by.me?${params}`, "_blank");
-    toast.success("Redirecting to order form...");
+    navigate("/order-form");
   };
 
   return (
